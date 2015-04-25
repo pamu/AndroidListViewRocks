@@ -10,29 +10,39 @@ import android.widget.TextView;
 import com.pamulabs.androidlistviewrocks.R;
 
 /**
- * Created by pnagarjuna on 25/04/15.
+ * Created by pnagarjuna on 26/04/15.
  */
-public class SlowAdapter<T> extends ArrayAdapter<T> {
+public class FastAdapter<T> extends ArrayAdapter<T> {
     private Context mContext;
-    private LayoutInflater layoutInflater;
     private T[] objects;
+    private LayoutInflater layoutInflater;
     private int resource;
 
-    public SlowAdapter(Context context, int resource, T[] objects) {
+    public FastAdapter(Context context, int resource, T[] objects) {
         super(context, resource, objects);
         this.mContext = context;
         this.objects = objects;
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.resource = resource;
+        this.layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View rootView = layoutInflater.inflate(resource, null);
-        TextView nameTextView = (TextView) rootView.findViewById(R.id.name);
-        TextView descTextView = (TextView) rootView.findViewById(R.id.desc);
+        TextView nameTextView = null;
+        TextView descTextView = null;
+        View rootView = null;
+
+        if (convertView != null) {
+            rootView = convertView;
+        } else {
+            rootView = layoutInflater.inflate(resource, null);
+        }
+
+        nameTextView = (TextView) rootView.findViewById(R.id.name);
+        descTextView = (TextView) rootView.findViewById(R.id.desc);
         nameTextView.setText(objects[position].toString());
         descTextView.setText(objects[position].toString());
+
         return rootView;
     }
 }

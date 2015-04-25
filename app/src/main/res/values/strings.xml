@@ -5,4 +5,5 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_simple_list_view">SimpleListViewActivity</string>
     <string name="title_activity_slow_list_view">SlowListViewActivity</string>
+    <string name="title_activity_fast_list_view">FastListViewActivity</string>
 </resources>

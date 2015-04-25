@@ -12,15 +12,15 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ListView;
 
-import com.pamulabs.androidlistviewrocks.adapters.SlowAdapter;
+import com.pamulabs.androidlistviewrocks.adapters.FastAdapter;
 
 
-public class SlowListViewActivity extends ActionBarActivity {
+public class FastListViewActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_slow_list_view);
+        setContentView(R.layout.activity_fast_list_view);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -32,7 +32,7 @@ public class SlowListViewActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_slow_list_view, menu);
+        getMenuInflater().inflate(R.menu.menu_fast_list_view, menu);
         return true;
     }
 
@@ -62,11 +62,12 @@ public class SlowListViewActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_slow_list_view, container, false);
-            ListView listView = (ListView) rootView.findViewById(R.id.slow_list_view);
-            SlowAdapter<String> slowAdapter = new SlowAdapter<>(getActivity(),
+            View rootView = inflater.inflate(R.layout.fragment_fast_list_view, container, false);
+            ListView fastListView = (ListView) rootView.findViewById(R.id.fast_list_view);
+            FastAdapter<String> fastAdapter = new FastAdapter<>(getActivity(),
                     R.layout.listview_item2, new String[] {"java", "scala", "c", "cpp", "android"});
-            listView.setAdapter(slowAdapter);
+            fastListView.setAdapter(fastAdapter);
+            
             return rootView;
         }
     }

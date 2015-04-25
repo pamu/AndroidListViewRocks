@@ -86,6 +86,17 @@ public class MainActivity extends ActionBarActivity {
                         intent = new Intent(getActivity(), SimpleListViewActivity.class);
                         intent.putExtra(ITEM_NUMBER, i);
                     }
+
+                    if(i == 1) {
+                        intent = new Intent(getActivity(), SlowListViewActivity.class);
+                        intent.putExtra(ITEM_NUMBER, i);
+                    }
+
+                    if(i == 2) {
+                        intent = new Intent(getActivity(), FastListViewActivity.class);
+                        intent.putExtra(ITEM_NUMBER, i);
+                    }
+
                     if (intent != null) startActivity(intent);
                 }
             });
