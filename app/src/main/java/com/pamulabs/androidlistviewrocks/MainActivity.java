@@ -97,6 +97,11 @@ public class MainActivity extends ActionBarActivity {
                         intent.putExtra(ITEM_NUMBER, i);
                     }
 
+                    if(i == 3) {
+                        intent = new Intent(getActivity(), SuperFastListViewActivity.class);
+                        intent.putExtra(ITEM_NUMBER, i);
+                    }
+
                     if (intent != null) startActivity(intent);
                 }
             });

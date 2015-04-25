@@ -40,6 +40,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pamulabs.androidlistviewrocks.MainActivity" />
         </activity>
+        <activity
+            android:name=".SuperFastListViewActivity"
+            android:label="@string/title_activity_super_fast_list_view"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pamulabs.androidlistviewrocks.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

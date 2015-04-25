@@ -12,15 +12,15 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ListView;
 
-import com.pamulabs.androidlistviewrocks.adapters.FastAdapter;
+import com.pamulabs.androidlistviewrocks.adapters.SuperFastAdapter;
 
 
-public class FastListViewActivity extends ActionBarActivity {
+public class SuperFastListViewActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fast_list_view);
+        setContentView(R.layout.activity_super_fast_list_view);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -32,7 +32,7 @@ public class FastListViewActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_fast_list_view, menu);
+        getMenuInflater().inflate(R.menu.menu_super_fast_list_view, menu);
         return true;
     }
 
@@ -62,12 +62,12 @@ public class FastListViewActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_fast_list_view, container, false);
-            ListView fastListView = (ListView) rootView.findViewById(R.id.fast_list_view);
-            FastAdapter<String> fastAdapter = new FastAdapter<>(getActivity(),
+            View rootView = inflater.inflate(R.layout.fragment_super_fast_list_view, container, false);
+            ListView superFastListView = (ListView) rootView.findViewById(R.id.super_fast_list_view);
+            SuperFastAdapter<String> superFastAdapter = new SuperFastAdapter<>(getActivity(),
                     R.layout.listview_item2, new String[] {"java", "scala", "c", "cpp", "android"});
-            fastListView.setAdapter(fastAdapter);
 
+            superFastListView.setAdapter(superFastAdapter);
             return rootView;
         }
     }
