@@ -18,7 +18,19 @@
         </activity>
         <activity
             android:name=".SimpleListViewActivity"
-            android:label="@string/title_activity_simple_list_view" >
+            android:label="@string/title_activity_simple_list_view"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pamulabs.androidlistviewrocks.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SlowListViewActivity"
+            android:label="@string/title_activity_slow_list_view"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pamulabs.androidlistviewrocks.MainActivity" />
         </activity>
     </application>
 
